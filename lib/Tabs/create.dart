@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vertical_tabs_flutter/vertical_tabs.dart';
+import 'button.dart' as button;
 
 class Create extends StatefulWidget {
   const Create({Key? key}) : super(key: key);
@@ -13,9 +14,19 @@ class _CreateState extends State<Create> {
   Widget build(BuildContext context) {
     return VerticalTabs(
       tabsWidth: 150,
-      tabs: <Tab>[
-        Tab(child: Text('Get Started')),
-        Tab(child: Text('Tutorial')),
+      tabs: const <Tab>[
+        Tab(child: button.Button(
+            text:'Get Started',
+            textColor: Colors.black,
+            borderColor: Colors.black,
+            textSize: 18,
+        )),
+        Tab(child: button.Button(
+            text:'Tutorial',
+            textColor: Colors.black,
+            borderColor: Colors.black,
+            textSize: 18,
+        )),
       ],
       contents: <Widget>[
       Expanded(
@@ -49,7 +60,7 @@ class _CreateState extends State<Create> {
             ),
           ),
         ),
-          Container(child: Text('Dart'), padding: EdgeInsets.all(20)),
+          Container(child: Text('Tutorial for Create'), padding: EdgeInsets.all(20)),
       ],
     );
   }

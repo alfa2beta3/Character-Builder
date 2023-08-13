@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vertical_tabs_flutter/vertical_tabs.dart';
+import 'button.dart' as button;
 
 class Contribute extends StatefulWidget {
   const Contribute({Key? key}) : super(key: key);
@@ -14,8 +15,18 @@ class _ContributeState extends State<Contribute> {
     return VerticalTabs(
       tabsWidth: 150,
       tabs: <Tab>[
-        Tab(child: Text('Get Started')),
-        Tab(child: Text('Tutorial')),
+        Tab(child:button.Button(
+          text:'Get Started',
+          textColor: Colors.black,
+          borderColor: Colors.black,
+          textSize: 18,
+        )),
+        Tab(child: button.Button(
+          text:'Get Started',
+          textColor: Colors.black,
+          borderColor: Colors.black,
+          textSize: 18,
+        )),
       ],
       contents: <Widget>[
         Expanded(
@@ -35,7 +46,7 @@ class _ContributeState extends State<Contribute> {
             ),
           ),
         ),
-        Container(child: Text('Dart'), padding: EdgeInsets.all(20)),
+        Container(child: Text('Tutorial'), padding: EdgeInsets.all(20)),
       ],
     );
   }
