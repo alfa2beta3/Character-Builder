@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vertical_tabs_flutter/vertical_tabs.dart';
 
 class Create extends StatefulWidget {
   const Create({Key? key}) : super(key: key);
@@ -10,36 +11,46 @@ class Create extends StatefulWidget {
 class _CreateState extends State<Create> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Video Player"),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Upload Text Logic
-              },
-              child: Text("Upload Text"),
+    return VerticalTabs(
+      tabsWidth: 150,
+      tabs: <Tab>[
+        Tab(child: Text('Get Started')),
+        Tab(child: Text('Tutorial')),
+      ],
+      contents: <Widget>[
+      Expanded(
+          child: Center(
+              child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Video Player"),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+        // Upload Text Logic
+                  },
+                  child: Text("Upload Text"),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+        // Upload Picture Logic
+                  },
+                  child: Text("Upload Picture"),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+        // Download 3D Mesh Logic
+                  },
+                  child: Text("Download 3D Mesh"),
+                ),
+              ],
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Upload Picture Logic
-              },
-              child: Text("Upload Picture"),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Download 3D Mesh Logic
-              },
-              child: Text("Download 3D Mesh"),
-            ),
-          ],
+          ),
         ),
-      ),
+          Container(child: Text('Dart'), padding: EdgeInsets.all(20)),
+      ],
     );
   }
 }
