@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class create extends StatefulWidget {
-  const create({Key? key}) : super(key: key);
+class Create extends StatefulWidget {
+  const Create({Key? key}) : super(key: key);
 
   @override
-  State<create> createState() => _createState();
+  State<Create> createState() => _CreateState();
 }
 
-class _createState extends State<create> {
+class _CreateState extends State<Create> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
