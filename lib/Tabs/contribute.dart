@@ -22,7 +22,7 @@ class _ContributeState extends State<Contribute> {
           textSize: 18,
         )),
         Tab(child: button.Button(
-          text:'Get Started',
+          text:'Tutorial',
           textColor: Colors.black,
           borderColor: Colors.black,
           textSize: 18,

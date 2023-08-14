@@ -1,17 +1,31 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'Tabs/create.dart' as create;
 import 'Tabs/contribute.dart' as contribute;
 import 'Tabs/button.dart' as button;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: FutureBuilder(
+        future: _initialization,
+          builder: (context, snapshot){
+            if (snapshot.hasError){
+              print("Error");
+            }
+            if (snapshot.connectionState == ConnectionState.done){
+              return HomePage();
+            };
+            return CircularProgressIndicator();
+          },
+      ),
     );
   }
 }
